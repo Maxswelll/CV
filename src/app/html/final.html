@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lecturer Form</title>
+    <link rel="stylesheet" href="style/final.css">
+</head>
+<body>
+
+<h2>Lecturer Information:</h2>
+
+<form id="lecturerForm" class="lecturer-form">
+    <input type="hidden" id="editIndex">
+
+    <label>Lecturer Name</label>
+    <input type="text" id="name" required>
+
+    <label>Gender</label>
+    <select id="gender" required>
+        <option value="">Select Gender</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+    </select>
+
+    <label>Birth Date</label>
+    <input type="date" id="birth" required>
+
+    <label>Phone Number</label>
+    <input type="text" id="phone" placeholder="123-456-7890" required>
+
+    <label>Lecturer Rate</label>
+    <input type="number" id="rate" required>
+
+    <button type="submit" class="btn-main">Add Lecturer</button>
+</form>
+
+<table class="lecturer-table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Gender</th>
+            <th>BirthDate</th>
+            <th>Phone</th>
+            <th>Rate</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody id="tableBody"></tbody>
+</table>
+
+<script src="JavaScript/final.js"></script>
+</body>
+</html>

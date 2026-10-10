@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Information Manager — Pretty & Cool</title>
+
+  <!-- Google Font + FontAwesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <link rel="stylesheet" href="style/Dec15.css" />
+</head>
+<body>
+  <div class="app">
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="logo">IM</div>
+        <div class="title">InfoManager</div>
+      </div>
+
+      <nav class="nav">
+        <button class="nav-btn active" data-tab="students"><i class="fa-solid fa-user-graduate"></i> People</button>
+        <button class="nav-btn" data-tab="things"><i class="fa-solid fa-box"></i> Things</button>
+        <button class="nav-btn" data-tab="places"><i class="fa-solid fa-map-marker-alt"></i> Places</button>
+        <button class="nav-btn" data-tab="events"><i class="fa-solid fa-calendar"></i> Events</button>
+      </nav>
+
+      <div class="sidebar-footer">
+        <small>Stay sharp, keep coding !</small>
+      </div>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main">
+      <header class="header">
+        <h1>Information Management</h1>
+        <div class="header-actions">
+          <button id="clearAll" title="Clear all saved data"><i class="fa-solid fa-trash-can"></i> Clear All</button>
+        </div>
+      </header>
+
+      <section class="content">
+        <!-- STUDENTS -->
+        <article class="tab" id="students">
+          <div class="card grid">
+            <form id="studentForm" class="form">
+              <h2>People — Student</h2>
+              <div class="row">
+                <input type="text" id="stu_name" placeholder="Full name" required>
+                <input type="text" id="stu_id" placeholder="Student ID" required>
+                <input type="number" id="stu_age" placeholder="Age" min="1" required>
+                <input type="email" id="stu_email" placeholder="Email">
+                <input type="tel" id="stu_phone" placeholder="Phone">
+                <select id="stu_gender" required>
+                  <option value="">Gender</option>
+                  <option>Male</option>
+                  <option>Female</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div class="form-actions">
+                <button type="submit" class="btn primary" id="stu_submit">Add Student</button>
+                <button type="button" class="btn ghost" id="stu_reset">Reset</button>
+              </div>
+            </form>
+
+            <div class="table-wrap">
+              <h3>Students</h3>
+              <input id="stu_search" placeholder="Search name or ID..." />
+              <table class="styled-table">
+                <thead>
+                  <tr><th>ID</th><th>Name</th><th>Age</th><th>Email</th><th>Phone</th><th>Gender</th><th>Actions</th></tr>
+                </thead>
+                <tbody id="stu_tbody"></tbody>
+              </table>
+            </div>
+          </div>
+        </article>
+
+        <!-- THINGS -->
+        <article class="tab" id="things" hidden>
+          <div class="card grid">
+            <form id="thingForm" class="form">
+              <h2>Thing Information</h2>
+              <div class="row">
+                <input type="text" id="thing_name" placeholder="Thing name" required>
+                <input type="text" id="thing_brand" placeholder="Brand" required>
+                <input type="text" id="thing_serial" placeholder="Serial / Model">
+                <input type="number" id="thing_price" placeholder="Price" min="0">
+                <input type="text" id="thing_color" placeholder="Color">
+                <select id="thing_type">
+                  <option value="">Type</option>
+                  <option>Electronics</option>
+                  <option>Furniture</option>
+                  <option>Accessory</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div class="form-actions">
+                <button type="submit" class="btn primary" id="thing_submit">Add Thing</button>
+                <button type="button" class="btn ghost" id="thing_reset">Reset</button>
+              </div>
+            </form>
+
+            <div class="table-wrap">
+              <h3>Things</h3>
+              <table class="styled-table">
+                <thead>
+                  <tr><th>Name</th><th>Brand</th><th>Serial</th><th>Price</th><th>Color</th><th>Type</th><th>Actions</th></tr>
+                </thead>
+                <tbody id="thing_tbody"></tbody>
+              </table>
+            </div>
+          </div>
+        </article>
+
+        <!-- PLACES -->
+        <article class="tab" id="places" hidden>
+          <div class="card grid">
+            <form id="placeForm" class="form">
+              <h2>Place Information</h2>
+              <div class="row">
+                <input type="text" id="place_name" placeholder="Place name" required>
+                <input type="text" id="place_type" placeholder="Type (City, School, Park)" required>
+                <input type="text" id="place_address" placeholder="Address" required>
+                <input type="text" id="place_country" placeholder="Country">
+                <input type="number" id="place_rating" placeholder="Rating (1-5)" min="1" max="5">
+                <input type="text" id="place_hours" placeholder="Open hours (e.g. 8:00 - 17:00)">
+              </div>
+              <div class="form-actions">
+                <button type="submit" class="btn primary" id="place_submit">Add Place</button>
+                <button type="button" class="btn ghost" id="place_reset">Reset</button>
+              </div>
+            </form>
+
+            <div class="table-wrap">
+              <h3>Places</h3>
+              <table class="styled-table">
+                <thead>
+                  <tr><th>Name</th><th>Type</th><th>Address</th><th>Country</th><th>Rating</th><th>Hours</th><th>Actions</th></tr>
+                </thead>
+                <tbody id="place_tbody"></tbody>
+              </table>
+            </div>
+          </div>
+        </article>
+
+        <!-- EVENTS -->
+        <article class="tab" id="events" hidden>
+          <div class="card grid">
+            <form id="eventForm" class="form">
+              <h2>Event Information</h2>
+              <div class="row">
+                <input type="text" id="ev_name" placeholder="Event name" required>
+                <input type="date" id="ev_date" required>
+                <input type="text" id="ev_location" placeholder="Location" required>
+                <input type="number" id="ev_people" placeholder="Attending (number)" min="0">
+                <select id="ev_type">
+                  <option value="">Type</option>
+                  <option>Festival</option>
+                  <option>Meeting</option>
+                  <option>Training</option>
+                  <option>Party</option>
+                </select>
+                <input type="text" id="ev_desc" placeholder="Short description">
+              </div>
+              <div class="form-actions">
+                <button type="submit" class="btn primary" id="ev_submit">Add Event</button>
+                <button type="button" class="btn ghost" id="ev_reset">Reset</button>
+              </div>
+            </form>
+
+            <div class="table-wrap">
+              <h3>Events</h3>
+              <table class="styled-table">
+                <thead>
+                  <tr><th>Name</th><th>Date</th><th>Location</th><th>People</th><th>Type</th><th>Description</th><th>Actions</th></tr>
+                </thead>
+                <tbody id="ev_tbody"></tbody>
+              </table>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <footer class="footer">
+        <small>Have a nice life ! </small>
+      </footer>
+    </main>
+  </div>
+
+  <script src="JavaScript/Dec15.js"></script>
+</body>
+</html>

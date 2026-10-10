@@ -1,0 +1,351 @@
+/* ==============================
+   ULTRA COOL CYBERPUNK DASHBOARD
+   Modern • Neon • Glassmorphism
+   ============================== */
+
+:root {
+  --bg: #0b0f1f;
+  --surface: rgba(255, 255, 255, 0.05);
+  --card: rgba(10, 10, 10, 0.45);
+  --border: rgba(255, 255, 255, 0.12);
+  --text: #e6ecf5;
+  --text-muted: #8da0bd;
+  --accent: #4ea3ff;
+  --accent-gradient: linear-gradient(135deg, #4ea3ff, #7cc8ff);
+  --radius: 16px;
+  --shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+  --hover-glow: 0 0 12px var(--accent);
+  --transition: 0.25s ease-in-out;
+}
+
+/* Reset */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", system-ui;
+  background: var(--bg);
+  color: var(--text);
+  padding: 24px;
+}
+
+/* APP LAYOUT */
+.app {
+  display: flex;
+  gap: 36px;
+  min-height: 100vh;
+  transition: background var(--transition);
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 260px;
+  padding: 36px 24px;
+  border-radius: var(--radius);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(24px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+/* ================= LOGO ================= */
+.logo {
+  width: 80px; /* slightly bigger */
+  height: 80px;
+  border-radius: 20px; /* softer corners */
+  background: var(--accent-gradient);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 900;
+  color: #06101f;
+  font-size: 28px;
+  text-shadow: 0 0 8px #06101f, 0 0 12px var(--accent);
+  transition: transform var(--transition), box-shadow var(--transition);
+  cursor: default;
+}
+
+.logo:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px var(--accent), 0 0 30px var(--accent);
+}
+
+/* ================= TITLE ================= */
+.title {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--accent);
+  text-align: center;
+  letter-spacing: 1px;
+  text-shadow: 0 0 6px var(--accent), 0 0 12px #4ea3ff50;
+  margin-top: 12px;
+  transition: all var(--transition);
+}
+
+.title:hover {
+  text-shadow: 0 0 12px var(--accent), 0 0 18px #4ea3ff80;
+  transform: scale(1.02);
+}
+
+/* NAVIGATION */
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.nav-btn {
+  padding: 16px 18px;
+  background: transparent;
+  border-radius: 14px;
+  color: var(--text-muted);
+  font-weight: 600;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all var(--transition);
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-btn:hover {
+  background: rgba(78, 163, 255, 0.15);
+  color: #fff;
+  box-shadow: var(--hover-glow);
+}
+
+.nav-btn.active {
+  background: var(--accent-gradient);
+  color: #06101f;
+  border-color: transparent;
+  box-shadow: var(--hover-glow);
+}
+
+/* MAIN CONTENT */
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+.header h1 {
+  font-size: 40px;
+  font-weight: 600;
+  color: var(--accent);
+  text-align: center; /* ensures text is centered */
+  letter-spacing: 0.5px;
+  width: 100%; /* make it span the full width of the parent */
+  display: block; /* ensures width works */
+}
+
+.header-actions button {
+  padding: 10px 16px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: 14px;
+  transition: all var(--transition);
+}
+
+.header-actions button:hover {
+  background: rgba(78, 163, 255, 0.2);
+  color: var(--accent);
+  box-shadow: var(--hover-glow);
+}
+
+/* CARD */
+.card {
+  background: var(--card);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(20px);
+  box-shadow: var(--shadow);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8);
+}
+
+/* FORM */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.form .row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.form input,
+.form select {
+  flex: 1 1 180px;
+  padding: 16px 14px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  color: var(--text);
+  font-size: 15px;
+  transition: all var(--transition);
+}
+
+.form input:focus,
+.form select:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: var(--hover-glow);
+}
+
+/* BUTTONS */
+.btn {
+  font-size: 15px;
+  border-radius: 12px;
+  padding: 14px 20px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.btn.primary {
+  background: var(--accent-gradient);
+  color: #06101f;
+  border: none;
+}
+
+.btn.primary:hover {
+  transform: scale(1.05);
+  box-shadow: var(--hover-glow);
+}
+
+.btn.ghost {
+  background: transparent;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+}
+
+.btn.ghost:hover {
+  background: rgba(78, 163, 255, 0.15);
+  color: #fff;
+  box-shadow: var(--hover-glow);
+}
+
+/* TABLE */
+.table-wrap h3 {
+  margin-bottom: 12px;
+  color: var(--accent);
+  text-shadow: 0 0 6px var(--accent);
+}
+
+.styled-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: rgba(10, 10, 10, 0.45);
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  backdrop-filter: blur(18px);
+}
+
+.styled-table thead {
+  background: var(--accent-gradient);
+}
+
+.styled-table thead th {
+  padding: 18px;
+  font-weight: 700;
+  font-size: 14px;
+  text-align: left;
+  color: #06101f;
+  letter-spacing: 0.5px;
+}
+
+.styled-table tbody td {
+  padding: 16px 14px;
+  font-size: 15px;
+  border-top: 1px solid var(--border);
+  color: var(--text);
+}
+
+.styled-table tbody tr:nth-child(odd) {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.styled-table tbody tr:nth-child(even) {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.styled-table tbody tr:hover {
+  background: rgba(78, 163, 255, 0.18);
+  transform: scale(1.003);
+  transition: all var(--transition);
+}
+
+/* ACTION BUTTONS */
+.action-btn {
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: 14px;
+  transition: all var(--transition);
+}
+
+.action-btn:hover {
+  background: rgba(78, 163, 255, 0.2);
+  color: var(--accent);
+  box-shadow: var(--hover-glow);
+}
+
+/* SEARCH INPUT */
+#stu_search {
+  padding: 12px 14px;
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text);
+  margin-bottom: 12px;
+  font-size: 14px;
+}
+
+#stu_search:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: var(--hover-glow);
+}
+
+/* FOOTER */
+.footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 13px;
+  color: var(--text-muted);
+}

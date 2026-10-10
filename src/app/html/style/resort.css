@@ -1,0 +1,320 @@
+/* ------------------ Reset and Global Styles ------------------ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Khmer OS Battambang", sans-serif;
+}
+
+body {
+  background-color: #0a0a0a;
+  color: #fff;
+  line-height: 1.8;
+}
+
+/* ------------------ Navigation Bar ------------------ */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 15px 40px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
+}
+
+.logo {
+  font-size: 1.9em;
+  font-weight: bold;
+  color: #f7d774;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.nav-links li a:hover {
+  color: #f7d774;
+  text-shadow: 0 0 10px #f7d774;
+}
+
+/* ------------------ Hero Section ------------------ */
+.hero {
+  height: 100vh;
+  background: url("https://images.pexels.com/photos/3217663/pexels-photo-3217663.jpeg")
+    no-repeat center center/cover;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-top: 2px solid #f7d774;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.55);
+}
+
+.hero-text {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  padding: 20px;
+}
+
+.hero-text h2 {
+  font-size: 3.2em;
+  color: #f7d774;
+  margin-bottom: 15px;
+}
+
+.hero-text p {
+  font-size: 1.4em;
+  color: #f1f1f1;
+}
+
+/* ------------------ Section Base ------------------ */
+section {
+  padding: 100px 30px;
+  text-align: center;
+  position: relative;
+  color: white;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 0;
+}
+
+section > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ------------------ About Section ------------------ */
+#about {
+  background-image: url("https://images.pexels.com/photos/1173777/pexels-photo-1173777.jpeg");
+  border-top: 2px solid #f7d774;
+}
+
+#about h2 {
+  color: #f7d774;
+  font-size: 2.3em;
+  margin-bottom: 20px;
+}
+
+#about p {
+  max-width: 900px;
+  margin: auto;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* ------------------ History Section ------------------ */
+#history {
+  background-image: url("https://images.pexels.com/photos/450035/pexels-photo-450035.jpeg");
+  border-top: 2px solid #f7d774;
+}
+
+#history h2 {
+  color: #f7d774;
+  margin-bottom: 25px;
+  font-size: 2.2em;
+}
+
+#history p {
+  color: #e8e8e8;
+  max-width: 900px;
+  margin: 0 auto 15px;
+}
+
+/* ------------------ Architecture Section ------------------ */
+#architecture {
+  background-image: url("https://images.pexels.com/photos/2166553/pexels-photo-2166553.jpeg");
+  border-top: 2px solid #f7d774;
+}
+
+#architecture h2 {
+  color: #f7d774;
+  font-size: 2.3em;
+  margin-bottom: 25px;
+}
+
+#architecture p {
+  max-width: 900px;
+  margin: 0 auto 20px;
+  color: #f2f2f2;
+}
+
+/* ------------------ Review Section ------------------ */
+#review {
+  background-image: url("https://images.pexels.com/photos/11844578/pexels-photo-11844578.jpeg");
+  border-top: 2px solid #f7d774;
+}
+
+#review h2 {
+  color: #f7d774;
+  font-size: 2.4em;
+  margin-bottom: 25px;
+}
+
+#review p {
+  max-width: 850px;
+  margin: 0 auto 20px;
+  color: #f1f1f1;
+}
+
+/* ------------------ Gallery ------------------ */
+#gallery {
+  background-image: url("https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg");
+  border-top: 2px solid #f7d774;
+}
+
+#gallery h2 {
+  color: #f7d774;
+  margin-bottom: 30px;
+  font-size: 2.3em;
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.image-grid img {
+  width: 100%;
+  border-radius: 10px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+}
+
+.image-grid img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(247, 215, 116, 0.6);
+}
+
+/* ------------------ Location ------------------ */
+#location {
+  background-image: url("https://images.pexels.com/photos/240040/pexels-photo-240040.jpeg");
+  border-top: 2px solid #f7d774;
+}
+
+#location h2 {
+  color: #f7d774;
+  font-size: 2.3em;
+  margin-bottom: 20px;
+}
+
+#location p {
+  max-width: 850px;
+  margin: 0 auto 30px;
+  color: #f1f1f1;
+}
+
+#location iframe {
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(247, 215, 116, 0.2);
+}
+
+/* ------------------ Contact ------------------ */
+#contact {
+  background-image: url("https://images.pexels.com/photos/912110/pexels-photo-912110.jpeg");
+  border-top: 2px solid #f7d774;
+}
+
+#contact h2 {
+  color: #f7d774;
+  margin-bottom: 20px;
+  font-size: 2.3em;
+}
+
+#contact p {
+  max-width: 850px;
+  margin: 0 auto 20px;
+  font-size: 1.1em;
+}
+
+.contact-info {
+  list-style: none;
+  margin-top: 20px;
+}
+
+.contact-info li {
+  margin: 8px 0;
+  font-size: 1.1em;
+  color: #f1f1f1;
+}
+
+/* ------------------ Footer ------------------ */
+footer {
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.95);
+  padding: 25px;
+  font-size: 0.95em;
+  color: #f1f1f1;
+  border-top: 2px solid #f7d774;
+}
+
+/* ------------------ Responsive Design ------------------ */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero-text h2 {
+    font-size: 2.2em;
+  }
+
+  .hero-text p {
+    font-size: 1.1em;
+  }
+
+  section {
+    padding: 80px 20px;
+  }
+
+  #gallery {
+    padding: 80px 10px;
+  }
+}

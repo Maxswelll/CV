@@ -1,0 +1,123 @@
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(to bottom, #336699 0%, #666699 100%);
+  margin: 0;
+  padding: 40px 0;
+  color: #333;
+}
+
+.cv-container {
+  background: #fff;
+  width: 800px;
+  margin: auto;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  display: flex;
+}
+
+/* Left Section */
+.left {
+  background: #f4f4f4;
+  width: 35%;
+  padding: 30px 25px;
+  text-align: center;
+}
+
+.profile-pic {
+  width: 150px;
+  height: 150px;
+  border-radius: 100%;
+  object-fit: cover;
+  border: 3px solid #100e0e;
+}
+
+.name {
+  font-size: 22px;
+  font-weight: 700;
+  margin-top: 15px;
+}
+
+.title {
+  font-size: 14px;
+  font-weight: 500;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+hr {
+  border: none;
+  border-top: 2px solid #ccc;
+  margin: 20px 0;
+}
+
+h3 {
+  text-transform: uppercase;
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: #222;
+  letter-spacing: 1px;
+}
+
+p,
+li {
+  font-size: 13px;
+  color: #333;
+  line-height: 1.5em;
+}
+
+ul {
+  padding-left: 20px;
+  text-align: left;
+}
+
+.contact i,
+.skills i,
+.languages i {
+  margin-right: 8px;
+  color: #555;
+}
+
+/* Right Section */
+.right {
+  width: 65%;
+  padding: 30px 40px;
+}
+
+.section-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.section hr {
+  border: 0;
+  border-top: 1px solid #ddd;
+  margin: 10px 0 20px;
+}
+
+.profile-text {
+  font-size: 14px;
+  line-height: 1.8em;
+  text-align: justify;
+  color: #444;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  margin-bottom: 15px;
+}
+
+td {
+  padding: 6px 4px;
+  border: 1px solid #ccc;
+}
+
+.ref-name {
+  font-weight: 600;
+  margin-top: 10px;
+}

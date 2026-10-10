@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" 
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <link rel="stylesheet" href="style/studentForm.css">
+
+    <title>Student Management</title>
+</head>
+<body>
+
+    <h1>Student Management</h1>
+
+    <form id="studentForm">
+        <input type="number" id="studentId" placeholder="Student ID" required>
+        <input type="text" id="studentName" placeholder="Student Name" required>
+        <input type="number" id="studentAge" placeholder="Student Age" required>
+
+        <select id="studentGender" required>
+            <option value="" disabled selected>Select Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select>
+
+        <button id="addStudent" type="submit">Add Student</button>
+    </form>
+
+    <table id="studentTable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Student records will be added here -->
+        </tbody>
+    </table>
+    <script src="JavaScript/StudentForm.js"></script>
+
+</body>
+</html>
